@@ -1,27 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
+  const calculatorObject = new Calculator();
+  
   document.getElementById("calculateNumberBut").addEventListener("click", function () {
-    calculateNumber();
+    calculatorObject.calculateNumber();
   });
   
-  const calculateIntervalBut = document.getElementById("calculateIntervalBut");
-  calculateIntervalBut.addEventListener("click", function () {
-    calculateInterval();
+  document.getElementById("calculateIntervalBut").addEventListener("click", function () {
+    calculatorObject.calculateInterval();
   });
   
-  const calculateNElementsBut = document.getElementById("calculateNElementsBut");
-  calculateNElementsBut.addEventListener("click", function () {
-    calculateNElements();
+  document.getElementById("calculateNElementsBut").addEventListener("click", function () {
+    calculatorObject.calculateNElements();
   });
 });
 
-function calculateNumber () {
-  console.log("Calculate number");
+class Calculator {
+  calculateNumber () {
+    console.log("Calculate number");
+  }
+  
+  calculateInterval () {
+    console.log("Calculate interval");
+  }
+  
+  calculateNElements () {
+    console.log('Calculate N elements');
+  }
 }
 
-function calculateInterval () {
-  console.log("Calculate interval");
-}
 
-function calculateNElements () {
-  console.log('Calculate N elements');
-}

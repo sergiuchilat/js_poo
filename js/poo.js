@@ -1,32 +1,36 @@
 class Player {
  
   constructor (playerType) {
-    this.name = playerType;
+    this._name = playerType;
+  }
+  
+  getName(){
+    return this._name;
   }
   
   start(){
-    console.log("POO: " + this.name + " start");
+    console.log("POO: " + this._name + " start");
   }
   
   move(){
-    console.log("POO: " + this.name + " move");
+    console.log("POO: " + this._name + " move");
   }
   
   stop(){
-    console.log(`POO: ${this.name} stop`);
+    console.log(`POO: ${this._name} stop`);
   }
 }
 
 class Mario extends Player{
   jump(){
-    console.log(`POO: ${this.name} jump`);
+    console.log(`POO: ${this.getName()} jump`);
   }
 }
 
 
 class Luigi extends Player{
   run(){
-    console.log(`POO: ${this.name} run`);
+    console.log(`POO: ${this.getName()} run`);
   }
 }
 
@@ -34,6 +38,7 @@ startGame();
 
 function startGame () {
   const marioPlayer = new Mario("Mario");
+  console.log('===Player name: ' + marioPlayer.getName());
   marioPlayer.start();
   marioPlayer.move();
   marioPlayer.jump();
@@ -41,6 +46,7 @@ function startGame () {
   marioPlayer.stop();
   
   const luigiPlayer = new Luigi("Luigi");
+  console.log('===Player name: ' + luigiPlayer.getName());
   luigiPlayer.start();
   luigiPlayer.move();
   luigiPlayer.run();
