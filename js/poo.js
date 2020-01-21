@@ -1,45 +1,49 @@
-class Mario {
+class Player {
+ 
+  constructor (playerType) {
+    this.name = playerType;
+  }
+  
   start(){
-    console.log("POO: Mario start");
+    console.log("POO: " + this.name + " start");
   }
   
   move(){
-    console.log("POO: Mario move");
+    console.log("POO: " + this.name + " move");
   }
   
   stop(){
-    console.log("POO: Mario stop");
+    console.log(`POO: ${this.name} stop`);
+  }
+}
+
+class Mario extends Player{
+  jump(){
+    console.log(`POO: ${this.name} jump`);
   }
 }
 
 
-class Luigi {
-  start(){
-    console.log("POO: Luigi start");
-  }
-  
-  move(){
-    console.log("POO: Luigi move");
-  }
-  
-  stop(){
-    console.log("POO: Luigi stop");
+class Luigi extends Player{
+  run(){
+    console.log(`POO: ${this.name} run`);
   }
 }
 
 startGame();
 
 function startGame () {
-  const marioPlayer = new Mario();
+  const marioPlayer = new Mario("Mario");
   marioPlayer.start();
   marioPlayer.move();
+  marioPlayer.jump();
   marioPlayer.move();
   marioPlayer.stop();
   
-  const luigiPlayer = new Luigi();
+  const luigiPlayer = new Luigi("Luigi");
   luigiPlayer.start();
   luigiPlayer.move();
+  luigiPlayer.run();
   luigiPlayer.move();
   luigiPlayer.stop();
 }
-
